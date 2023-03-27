@@ -57,7 +57,7 @@ form {
             }
 
             & input {
-                height: $field-height;
+                height: $field-height ;
                 box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
                 font-size: $font-size-base - 2px;
 
@@ -97,7 +97,7 @@ form {
     }
 
     & input {
-        height: 40px !important;
+        height: $field-height !important;
         box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
         font-size: $font-size-base - 2px;
 
@@ -107,7 +107,7 @@ form {
     }
 
     & select {
-        height: 40px !important;
+        height: $field-height !important;
         box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
         font-size: $font-size-base - 2px;
     }
@@ -354,7 +354,7 @@ form {
 .react-tagsinput {
     transition: all 0.3s ease-in-out;
     border-radius: 4px;
-    height: 40px;
+    height: $field-height;
 
     &.react-tagsinput--focused {
         border-color: #66afe9 !important;
