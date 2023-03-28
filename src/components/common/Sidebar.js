@@ -21,7 +21,7 @@ const Sidebar = () => {
           <CDBSidebarMenu defaultActiveKey="/">
             <Nav.Item>
             <NavLink exact to="/no" activeClassName="activeClicked" eventKey="link-3.0">
-              <CDBSidebarMenuItem icon="home">Dashboard</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="home">Dashboard-DevVinay</CDBSidebarMenuItem>
             </NavLink>
             </Nav.Item>
             <Nav.Item>
