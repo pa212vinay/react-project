@@ -1,14 +1,13 @@
 import React, { useState, useRef } from 'react';
-import Overlay from 'react-bootstrap/Overlay';
-import Tooltip from 'react-bootstrap/Tooltip';
-import { Row, Form, Accordion, Table, Col } from "react-bootstrap";
+import { Row, Form, Accordion, Table, Col, Overlay, Tooltip } from "react-bootstrap";
 import { MdOutlineGeneratingTokens, MdOutlineDisabledByDefault } from "react-icons/md";
 import { BiCommentEdit } from "react-icons/bi";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { IoMdArrowDropdown } from "react-icons/io";
-import '../../../css/utility/_utility-dir.scss'
+import '../../../css/utility/_utility-dir.scss';
 import { FaCheck } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
+import { Icon } from '@iconify/react';
 
 
 const Customer_Details = () => {
@@ -203,42 +202,89 @@ const Customer_Details = () => {
                   <Form>
                     <Row className="g-3">
                       <div className="col-md-6 col-sm-12">
-                        <div className="form-group cus-form">
-                          <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-                            <Form.Label column sm={4}>
-                              <span className='cursor' ref={target} onClick={() => setShow(!show)}>Name</span>
-                              <Overlay target={target.current} show={show} placement="top">
-                                {(props) => (
-                                  <Tooltip id="overlay-example" {...props} className="tooltip_Tab" >
-                                    <div className='p-3 form'>
-                                      <h5 className='text-start text-black mb-3'>Order</h5>
-                                      <div className="form-group cus-form-group">
-                                        <Form.Control placeholder="User ID" className='fill-input' />
-                                        <label htmlFor="shipping" className='float-label'>Act type</label>
-                                      </div>
-                                      <div className="form-group cus-select-group mt-3">
-                                        <Form.Control className="form-control fill-input" as="select" name="require_shipping">
-                                          <option value="1">Text</option>
-                                          <option value="2">Numeric</option>
-                                          <option value="3">Date Picker</option>
-                                        </Form.Control>
-                                        <label className='float-label text-dark' htmlFor="require_shipping">Data Type</label>
-                                        <IoMdArrowDropdown className='inputIcon' />
-                                      </div>
-                                      <button className="btn-hover color-2 mt-3 me-2"><FaCheck /></button>
-                                      <button className="btn-hover color-1 mt-3"><ImCross /></button>
+                        <div className="form-group cus-form cus-form-group">
+                          <Form.Control className='fill-input' type="text" />
+                          <label className='float-label' >
+                            <span className='cursor' ref={target} onClick={() => setShow(!show)}>Name <Icon icon="material-symbols:edit" /></span>
+                            <Overlay target={target.current} show={show} placement="top">
+                              {(props) => (
+                                <Tooltip id="overlay-example" {...props} className="tooltip_Tab" >
+                                  <div className='p-3 form'>
+                                    <h5 className='text-start text-black mb-3'>Order</h5>
+                                    <div className="form-group cus-form-group">
+                                      <Form.Control placeholder="User ID" className='fill-input' />
+                                      <label htmlFor="shipping" className='float-label'>Act type</label>
                                     </div>
-                                  </Tooltip>
-                                )}
-                              </Overlay>
-                            </Form.Label>
-                            <Col sm={8}>
-                              <Form.Control type="text" />
-                            </Col>
-                          </Form.Group>
+                                    <div className="form-group cus-select-group mt-3">
+                                      <Form.Control className="form-control fill-input" as="select" name="require_shipping">
+                                        <option value="1">Text</option>
+                                        <option value="2">Numeric</option>
+                                        <option value="3">Date Picker</option>
+                                      </Form.Control>
+                                      <label className='float-label text-dark' htmlFor="require_shipping">Data Type</label>
+                                      <IoMdArrowDropdown className='inputIcon' />
+                                    </div>
+                                    <button className="btn-hover color-2 mt-3 me-2"><FaCheck /></button>
+                                    <button onClick={() => setShow(false)} className="btn-hover color-1 mt-3"><ImCross /></button>
+                                  </div>
+                                </Tooltip>
+                              )}
+                            </Overlay>
+                          </label>
+
                         </div>
                       </div>
+
                       <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Second Phone11</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Gender</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Additional Number</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Account</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Contact Type</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Social Media</label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6 col-sm-12">
+                        <div className="form-group cus-form-group">
+                          <Form.Control placeholder="Second Phone11" className='fill-input' />
+                          <label htmlFor="shipping" className='float-label'>Office Phone</label>
+                        </div>
+                      </div>
+
+                      {/* <div className="col-md-6 col-sm-12">
                         <div className="form-group cus-form">
                           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                             <Form.Label column sm={4}>
@@ -324,7 +370,7 @@ const Customer_Details = () => {
                             </Col>
                           </Form.Group>
                         </div>
-                      </div>
+                      </div> */}
                     </Row>
                   </Form>
                 </Accordion.Body>
