@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 function head() {
   return (
     <>
-      <Navbar expand="xl" className='header_navbar mainHeader'>
+      <Navbar expand="lg" className='header_navbar mainHeader'>
         <Container fluid className=''>
           <div className='getstart'>
             <a className='btn-hover getStartBtn'>
@@ -38,7 +38,7 @@ function head() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" className='ms-auto my-2 header_toggle' />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav variant="pills" defaultActiveKey="/" className="ms-auto align custom_nav">
-				<Nav.Item className='navMenu'>
+              <Nav.Item className='navMenu'>
                 <NavLink to="/" eventKey="link-1.2" className='fw-bold cus-menu-text'>
                   <TbShoppingCartPlus className='mx-1 menuIcon' />
                   <span>New Order</span>

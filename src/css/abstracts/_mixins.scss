@@ -4,6 +4,7 @@ $breakpoints: (
     "md" : 767.9px,
     "lg" : 991.9px,
     "xl" : 1199.9px,
+    "xl-xxl" : 1339.9px,
     "xxl": 1399.9px,
     "sm-b": 576px,
     "md-b":768px,
@@ -44,6 +45,18 @@ $breakpoints: (
     }
 }
 
+@mixin xl-xxl {
+    @media (max-width: map-get($breakpoints, "xl-xxl")) {
+        @content;
+    }
+}
+
+@mixin xl-bt-xxl {
+    @media (max-width: map-get($breakpoints, "xl-b-xxl")) {
+        @content;
+    }
+}
+
 @mixin xxl {
     @media (max-width: map-get($breakpoints, "xxl")) {
         @content;
@@ -74,6 +87,12 @@ $breakpoints: (
     }
 }
 
+@mixin xl-b-xxl {
+    @media (min-width: map-get($breakpoints, "xl-b-xxl")) {
+        @content;
+    }
+}
+
 @mixin xxl-b {
     @media (min-width: map-get($breakpoints, "xxl-b")) {
         @content;
@@ -86,9 +105,16 @@ $breakpoints: (
     }
 }
 
-// 1199.9px and 1340px
+// 1200px and 1340px
 @mixin xl_bt_xl-b-xxl {
     @media (min-width: map-get($breakpoints, "xl-b")) and (max-width: map-get($breakpoints, "xl-b-xxl")) {
+        @content;
+    }
+}
+
+// 992px and 1340px
+@mixin lg-b_bt_xl-b-xxl {
+    @media (min-width: map-get($breakpoints, "lg-b")) and (max-width: map-get($breakpoints, "xl-b-xxl")) {
         @content;
     }
 }
