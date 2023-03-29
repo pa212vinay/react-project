@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins:wght@300;200&display=swap');
 
 
+
 .App {
     overflow-x: hidden;
     position: relative;
@@ -829,12 +830,6 @@ button#controlled-tab-example-tab-Manual-1 {
     border-left: 1px solid $black-color;
 }
 
-.align {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
 .menuIcon {
     font-size: $font-size-base-px + 4;
     font-weight: 700;
@@ -858,16 +853,36 @@ button#controlled-tab-example-tab-Manual-1 {
 }
 
 .mainHeader {
+    .container-fluid {
+        @include lg-b_bt_xl-b-xxl {
+            flex-wrap: wrap !important;
+        }
+    }
+
     #basic-navbar-nav {
         z-index: 9;
         flex-grow: unset !important;
 
-        .custom_nav {
-            padding-right: 0px;
-            // padding-left: 10px;
+        @include lg-b_bt_xl-b-xxl {
+            width: 100%;
         }
 
-        @include xl {
+        .custom_nav {
+            padding-right: 0px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            @include lg-b_bt_xl-b-xxl {
+                margin: 0 auto;
+            }
+
+            @include lg {
+                flex-direction: column !important;
+            }
+        }
+
+        @include xl-bt-xxl {
             padding: 10px 10px;
             border-top: 1px solid $theme-color;
             margin-top: 25px;
@@ -922,11 +937,11 @@ button#controlled-tab-example-tab-Manual-1 {
             }
 
             .navMenu {
-                .cus-menu-text {
-                    @include xl_bt_xl-b-xxl {
-                        flex-direction: column;
-                    }
-                }
+                // .cus-menu-text {
+                //     @include xl_bt_xl-b-xxl {
+                //         flex-direction: column;
+                //     }
+                // }
 
                 @include lg {
                     justify-content: center;
@@ -943,7 +958,8 @@ button#controlled-tab-example-tab-Manual-1 {
                     justify-content: center;
                     align-items: center;
                     background: $theme-color;
-                    padding: 4px 0px
+                    padding: 4px 0px;
+                    width: 100%;
                 }
 
             }
@@ -980,19 +996,22 @@ button#controlled-tab-example-tab-Manual-1 {
     .header_toggle {
         position: absolute;
         top: 2px;
-        right: 15px;
+        right: $font-size-base-px - 1;
+        padding: 3px 5px;
+        font-size: 15px;
+        box-shadow: none !important;
     }
 }
 
-@media(max-width:991px) {
-    .align {
-        align-items: unset;
-    }
+// @media(max-width:991px) {
+//     .align {
+//         align-items: unset;
+//     }
 
-    .switchImg {
-        justify-content: unset;
-    }
-}
+//     .switchImg {
+//         justify-content: unset;
+//     }
+// }
 
 // -------------------Header--------
 
@@ -1094,7 +1113,7 @@ paddingTRB {
 
 // -------------------OrderSection--------
 
-// -------------------OrderTab--------
+/* ------------ OrderTab Start ------------ */
 
 .orderSerch {
     background: $color-white;
@@ -1103,80 +1122,125 @@ paddingTRB {
     border: unset;
 }
 
-::placeholder,
-.form-select {
-    color: #A5A5A6 !important;
-    font-size: $font-size-base-px - 2 !important;
-}
+// ::placeholder,
+// .form-select {
+//     color: #A5A5A6 !important;
+//     font-size: $font-size-base-px - 2 !important;
+// }
 
-.icon_carban {
-    font-size: $font-size-base-px + 14;
-    font-weight: 800;
-    width: 30px;
-    height: 48px;
+
+.cusOrderTab {
+    background: #FEBCBC !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    justify-content: space-between;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 7px 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+    color: $color-text;
+    position: relative;
 
-.bg_card_order {
-    border-radius: 10px !important;
-    padding: 7px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
-}
+    .cusIdDate {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 20px;
 
-.card_order1 {
-    background: #FEBCBC !important;
-    border-radius: 10px !important;
-}
+        &::before {
+            content: url('../images/carban.svg');
+            position: absolute;
+            width: 11px;
+            height: 20px;
+            left: 10px;
+            top: 27%;
+            transform: translateY(18%);
+        }
 
-.card_order2 {
-    background: #F9A8E7 !important;
-    border-radius: 10px !important;
-}
+        .cusOrderId {
+            padding-bottom: 5px;
+            font-size: $font-size-base-px - 4;
+        }
 
-.card_order3 {
-    background: #E4C8FB !important;
-    border-radius: 10px !important;
-}
+        .cusOrderDate {
+            font-size: $font-size-base-px - 4;
+        }
+    }
 
-.card_order4 {
-    background: #FEBCBC !important;
-    border-radius: 10px !important;
-}
+    .cusInvoicePrice {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
 
-.card_order5 {
-    border-radius: 10px !important;
-}
+        .cusTypeInvoice {
+            padding-bottom: 5px;
+            font-size: $font-size-base-px - 4;
+            text-transform: uppercase;
+        }
 
-.card_order1,
-.card_order2,
-.card_order3,
-.card_order4,
-.card_order5 {
-    :hover {
-        color: $black-color;
+        .cusInvoiceValue {
+            font-size: $font-size-base-px - 4;
+        }
     }
 }
 
-.orderText {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
+// .bg_card_order {
+//     border-radius: 10px !important;
+//     padding: 7px;
+//     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+// }
 
-.orderimg {
-    width: 11px;
-    height: 20px;
-}
+// .card_order1 {
+//     background: #FEBCBC !important;
+//     border-radius: 10px !important;
+// }
 
-.orderTab {
-    .orderText {
-        font-size: $font-size-base - 4px;
-    }
-}
+// .card_order2 {
+//     background: #F9A8E7 !important;
+//     border-radius: 10px !important;
+// }
 
-// -------------------OrderTab--------
+// .card_order3 {
+//     background: #E4C8FB !important;
+//     border-radius: 10px !important;
+// }
+
+// .card_order4 {
+//     background: #FEBCBC !important;
+//     border-radius: 10px !important;
+// }
+
+// .card_order5 {
+//     border-radius: 10px !important;
+// }
+
+// .card_order1,
+// .card_order2,
+// .card_order3,
+// .card_order4,
+// .card_order5 {
+//     :hover {
+//         color: $black-color;
+//     }
+// }
+
+// .orderText {
+//     position: absolute;
+//     top: 15px;
+//     right: 20px;
+// }
+
+// .orderimg {
+//     width: 11px;
+//     height: 20px;
+// }
+
+// .orderTab {
+//     .orderText {
+//         font-size: $font-size-base - 4px;
+//     }
+// }
+
+/* ------------ OrderTab Start End ------------ */
 
 // -------------------SideBar--------
 .sidebar {
